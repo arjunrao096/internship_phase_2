@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <style>
+    *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 350px;
+    width: 80%;
+
+
+}
+
+.newclass{
+    background-color: aqua;
+    color: brown;
+}
+
+code{
+    background-color: white;
+    color: black;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+button{
+    margin: 20px;
+}
+  </style>
+</head>
+<body>
+    <div class="container1">
+      <h2>This text  is inside the <code>div</code> </h2>
+    </div>
+    <button class="button1">Hide The Div</button>
+    <button class="button2">Show The Div</button>
+    <button class="button3">Change Text</button>
+    <button class="button4">Change Class</button>
+
+    <script>
+      $(document).ready(()=>{
+        // Hide The Div
+        $('.button1').click(()=>{
+          $('.container1').hide(700);
+            });
+        // Show The Div
+            $('.button2').click(()=>{
+          $('.container1').show(700);
+            });
+       // Change Text In Div
+               $('.button3').click(()=>{
+             $('h2').text('Hello, the text has been changed');
+               });
+        // Change Class of Div
+            $('.button4').click(()=>{
+          $('.container1').toggleClass('newclass',1000);
+            });
+      })
+      ;
+    </script>
+</body>
+</html>
