@@ -6,22 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
     *{
     box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
     margin: 0;
     padding: 0;
-}
-
-body{
-    /* height: 100vh; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 .container1{
@@ -31,7 +23,7 @@ body{
     background-color: black;
     color: white;
     height: 350px;
-    width: 80%;
+    width: 100%;
 
 
 }
@@ -49,6 +41,10 @@ code{
 }
 
 button{
+  background-color: rgb(21, 46, 70);
+  color: white;
+  border: none;
+  padding: 10px;
     margin: 20px;
 }
   </style>
@@ -61,6 +57,12 @@ button{
     <button class="button2">Show The Div</button>
     <button class="button3">Change Text</button>
     <button class="button4">Change Class</button>
+    <button class="button5">Fade Out</button>
+    <button class="button6">Fade In </button>
+    <button class="button7">Fade Toggle</button>
+    <button class="button8">Slide Up</button>
+    <button class="button9">Slide Down</button>
+    <button class="button10">Slide Toggle</button>
 
     <script>
       $(document).ready(()=>{
@@ -78,8 +80,40 @@ button{
                });
         // Change Class of Div
             $('.button4').click(()=>{
-          $('.container1').toggleClass('newclass',1000);
+          $('.container1').toggleClass('newclass');
             });
+
+        // Fade out the div   
+        $('.button5').click(()=>{
+          $('.container1').fadeOut(700);
+            });
+
+            // Fade in the div   
+        $('.button6').click(()=>{
+          $('.container1').fadeIn(700);
+            });
+
+             // Toggle FadeIn/FadeOut the div   
+        $('.button7').click(()=>{
+          $('.container1').fadeToggle(700);
+            });
+
+               // Slide Up the div   
+        $('.button8').click(()=>{
+          $('.container1').slideUp(700);
+            });
+
+             // Slide Down the div   
+        $('.button9').click(()=>{
+          $('.container1').slideDown(1000);
+            });
+
+               // Toggle the Slide in div   
+        $('.button10').click(()=>{
+          $('.container1').slideToggle(1000);
+            });
+
+            
       })
       ;
     </script>
