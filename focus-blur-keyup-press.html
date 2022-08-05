@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Event</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+    *{
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+  </style>
+</head>
+<body>
+    
+    <input class="inp" type="text" placeholder="Name">
+    <input class="inp" type="text" placeholder="College">
+    <input class="inp" type="text" placeholder="City">
+
+
+    <script>
+      $(document).ready(()=>{
+
+             // On Focus Change Background Color
+             $("input").focus( function() {
+                $(this).css("background-color", "red");
+             });
+
+                // On Blur Change Background Color
+             $('input').blur( function() {
+                $(this).css("background-color", "cyan");
+               });
+
+                // On Keypress Change Container Text
+             $('input').keypress( function() {
+                $('h2').text('Key Pressed');
+               });
+
+                // On Up Key press Change Container Text
+             $('input').keyup( function() {
+                $(this).css("background-color", "yellow");
+               });
+            
+      })
+      ;
+    </script>
+</body>
+</html>
