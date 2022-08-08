@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>drag,drop,resizer</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <style>
+  #draggable { width: 120px; height: 100px;background-color: rgb(30, 210, 33); padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #droppable { width: 180px; height: 150px;padding: 0.5em; float: left; margin: 10px;}
+  #resizable { width: 150px; height: 150px;background-color: crimson; padding: 0.5em; }
+  #resizable h3 { text-align: center; margin: 0; }
+  #sortable { color:white; list-style-type: none;background-color: black; margin: 0; padding: 0; width: 60%; }
+  #sortable li { color:white; margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em;background-color: black; font-size: 1.4em; height: 18px; }
+  #sortable li span { color:white; position: absolute;background-color: black; margin-left: -1.3em; }
+ </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      }
+    });
+    $( "#draggable" ).draggable();
+    $( "#resizable" ).resizable();
+    $( "#sortable" ).sortable();
+  } );
+  
+ 
+  </script>
+</head>
+<body>
+ 
+<div id="draggable" class="ui-widget-content">
+  <p>I'M DRAGGABLE DIV</p>
+</div><br><br><br><br><br><br><br><br>
+<hr>
+ 
+  <div id="droppable" class="ui-widget-header">
+    <p>Drop here</p>
+  </div><br><br><br><br><br><br><br><br><br><br><br>
+  <hr>
+  <div id="resizable" class="ui-widget-content">
+    <h3 class="ui-widget-header">I can be Resize to any size</h3>
+  </div><br><br><br><br><br><br><br><hr>
+   
+  <ul id="sortable">
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+  </ul>
+ 
+ 
+</body>
+</html>
